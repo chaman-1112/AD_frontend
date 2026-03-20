@@ -1,0 +1,7 @@
+node_modules/
+**/node_modules/
+
+# Local env (keep secrets and machine-specific URLs out of git)
+.env
+.env.local
+.env.*.local
