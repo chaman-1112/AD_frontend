@@ -82,7 +82,17 @@ function RunDetailPage() {
                     <div className="flex flex-wrap items-center justify-between gap-3">
                         <div>
                             <h1 className="text-lg font-bold text-slate-900">{run.label}</h1>
-                            <p className="text-xs text-slate-500 mt-1">Run ID: {run.id}</p>
+                            <p className="text-xs text-slate-500 mt-1">
+                                Run ID: {run.id}
+                                {run.mode && (
+                                    <span className="ml-2 rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[10px] text-slate-600">
+                                        {String(run.mode).replace(/-/g, ' ')}
+                                    </span>
+                                )}
+                                {run.activeEnv && (
+                                    <span className="ml-2 text-slate-400">· {run.activeEnv}</span>
+                                )}
+                            </p>
                         </div>
                         <span className="text-xs font-semibold uppercase rounded-full px-2.5 py-1 bg-slate-100 text-slate-700">
                             {run.status || 'unknown'}

@@ -1,18 +1,18 @@
 import {
-    Building, Building2, FileCode, Copy, Palette, Zap, FlaskConical, KeyRound,
+    Building, Building2, FileCode, Copy, Palette, Zap, FlaskConical, KeyRound, FileSpreadsheet,
 } from 'lucide-react';
 
 export const NAV_ITEMS = [
     { id: 'org', label: 'Copy Organization', icon: Building2, iconBg: 'bg-violet-100', iconColor: 'text-violet-600' },
     { id: 'company', label: 'Copy Company', icon: Building, iconBg: 'bg-blue-100', iconColor: 'text-blue-600' },
-    // { id: 'user', label: 'Create Users', icon: UserPlus, iconBg: 'bg-emerald-100', iconColor: 'text-emerald-600' },
-    { id: 'script-copy-search-menus', label: 'Script: Copy Custom Search Menus', icon: Copy, iconBg: 'bg-amber-100', iconColor: 'text-amber-600', scriptKey: 'copyCustomSearchMenus' },
-    { id: 'script-copy-white-label', label: 'Script: Copy White Label', icon: Palette, iconBg: 'bg-amber-100', iconColor: 'text-amber-600', scriptKey: 'copyOrgWhiteLabel' },
-    { id: 'script-copy-customizations', label: 'Script: Selective Customizations Copy', icon: FileCode, iconBg: 'bg-amber-100', iconColor: 'text-amber-600', scriptKey: 'copySelectiveCustomizations' },
-    { id: 'script-copy-custom-data', label: 'Script: Copy Custom Data Headers & Values', icon: FileCode, iconBg: 'bg-amber-100', iconColor: 'text-amber-600', scriptKey: 'copyCustomDataAndValues' },
-    { id: 'script-test-features', label: 'Script: Feature Switches Copy(Company)', icon: Zap, iconBg: 'bg-orange-100', iconColor: 'text-orange-600', scriptKey: 'testFeatureActivation' },
-    { id: 'script-test-customizations', label: 'Script: Customizations Spec(PDP, SearchResult, SearchForm)', icon: FlaskConical, iconBg: 'bg-orange-100', iconColor: 'text-orange-600', scriptKey: 'testCustomizations' },
-    { id: 'script-import-search-menus-sheet', label: 'Script: Import Custom Search Menus (Sheet)', icon: FileCode, iconBg: 'bg-amber-100', iconColor: 'text-amber-600', scriptKey: 'importCustomSearchMenusFromSheet' },
+    { id: 'bulk-users-sheet', label: 'Bulk users (Excel/CSV)', icon: FileSpreadsheet, iconBg: 'bg-emerald-100', iconColor: 'text-emerald-700' },
+    { id: 'script-copy-search-menus', label: 'Copy custom search menus', icon: Copy, iconBg: 'bg-amber-100', iconColor: 'text-amber-600', scriptKey: 'copyCustomSearchMenus' },
+    { id: 'script-copy-white-label', label: 'Copy white label', icon: Palette, iconBg: 'bg-amber-100', iconColor: 'text-amber-600', scriptKey: 'copyOrgWhiteLabel' },
+    { id: 'script-copy-customizations', label: 'Copy customizations (org/company)', icon: FileCode, iconBg: 'bg-amber-100', iconColor: 'text-amber-600', scriptKey: 'copyCustomizations' },
+    { id: 'script-copy-custom-data', label: 'Copy custom data & values', icon: FileCode, iconBg: 'bg-amber-100', iconColor: 'text-amber-600', scriptKey: 'copyCustomDataAndValues' },
+    { id: 'script-test-features', label: 'Copy company feature switches', icon: Zap, iconBg: 'bg-orange-100', iconColor: 'text-orange-600', scriptKey: 'testFeatureActivation' },
+    { id: 'script-test-customizations', label: 'Test PDP / search customizations', icon: FlaskConical, iconBg: 'bg-orange-100', iconColor: 'text-orange-600', scriptKey: 'testCustomizations' },
+    { id: 'script-import-search-menus-sheet', label: 'Import search menus from sheet', icon: FileCode, iconBg: 'bg-amber-100', iconColor: 'text-amber-600', scriptKey: 'importCustomSearchMenusFromSheet' },
     { id: 'inventory-permissions', label: 'Inventory API Permissions', icon: KeyRound, iconBg: 'bg-cyan-100', iconColor: 'text-cyan-700' },
 ];
 
@@ -47,9 +47,9 @@ export const STEP_DEFS = {
         { id: 'init', label: 'Initialize' },
         { id: 'run', label: 'Copy White Label Configs' },
     ],
-    copySelectiveCustomizations: [
+    copyCustomizations: [
         { id: 'init', label: 'Initialize' },
-        { id: 'run', label: 'Copy Selected Customizations' },
+        { id: 'run', label: 'Copy selected sections' },
     ],
     copyCustomDataAndValues: [
         { id: 'init', label: 'Initialize' },
@@ -66,6 +66,9 @@ export const STEP_DEFS = {
     importCustomSearchMenusFromSheet: [
         { id: 'init', label: 'Initialize' },
         { id: 'run', label: 'Import from Sheet' },
+    ],
+    bulkUsersSheet: [
+        { id: 'upload-run', label: 'POST create users + DB lookup + email verified' },
     ],
 };
 

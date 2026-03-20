@@ -22,9 +22,10 @@ const SCRIPT_FIELDS = {
             { key: 'targetOrgId', label: 'Target Org ID', placeholder: 'e.g. 945' },
         ],
     },
-    copySelectiveCustomizations: {
-        title: 'Copy Customizations (Org/Company)',
-        description: 'Copies selected customizations (Global, Custom Texts, JsonNavMenu) using one unified script.',
+    copyCustomizations: {
+        title: 'Copy customizations',
+        description:
+            'Copies selected sections: global texts, custom texts, JSON nav menu, and optionally PDP / search form / search result / product unified page rows from the customizations table.',
         scopeSelector: true,
         fieldsByScope: {
             org: [
@@ -67,10 +68,15 @@ const SCRIPT_FIELDS = {
     },
     importCustomSearchMenusFromSheet: {
         title: 'Import Custom Search Menus From Sheet',
-        description: 'Imports custom search menu types and menus using an Excel file path.',
+        description:
+            'Imports custom search menu types and menus from an .xlsx file. SVG/PNG columns may be local paths or direct HTTPS URLs (e.g. CDN assets).',
         fields: [
             { key: 'targetOrgId', label: 'Target Org ID', placeholder: 'e.g. 380' },
-            { key: 'xlsxPath', label: 'XLSX Path', placeholder: 'e.g. C:/Users/me/Downloads/spreadsheet.xlsx' },
+            {
+                key: 'xlsxPath',
+                label: 'XLSX Path',
+                placeholder: 'Local path on the server, or upload via file picker below',
+            },
             { key: 'sheetName', label: 'Sheet Name (optional)', placeholder: 'e.g. Sheet4', required: false },
         ],
     },
